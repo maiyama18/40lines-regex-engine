@@ -1,0 +1,9 @@
+{
+  "name": "reg",
+  "version": "0.1.0",
+  "description": "a simple regexp engine",
+  "main": "index.js",
+  "repository": "https://github.com/muiscript/reg",
+  "author": "muiscript",
+  "license": "MIT"
+}
