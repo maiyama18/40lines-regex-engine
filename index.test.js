@@ -69,3 +69,23 @@ describe('?', () => {
     });
   });
 });
+
+describe('*', () => {
+  const testCases = [
+    ['a?', 'a', true],
+    ['b?', 'a', true],
+    ['a?b', 'b', true],
+    ['a?b', 'ab', true],
+    ['a?b', 'a', false],
+    ['ab?c', 'abc', true],
+    ['ab?c', 'ac', true],
+    ['ab?c', 'axc', false],
+    ['a.?c', 'axc', true],
+  ];
+
+  testCases.forEach(([pattern, text, expected]) => {
+    test(`${pattern}-${text}: ${expected}`, () => {
+      expect(search(pattern, text)).toBe(expected);
+    });
+  });
+});

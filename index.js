@@ -13,10 +13,20 @@ const matchQuestion = (pattern, text) => {
   return match(pattern.slice(2), text);
 };
 
+const matchStar = (pattern, text) => {
+  if (matchOne(pattern[0], text[0])) {
+    return match(pattern, text.slice(1));
+  }
+  return match(pattern.slice(2), text);
+};
+
 const match = (pattern, text) => {
   if (pattern === '') return true;
   if (pattern[1] === '?') {
     return matchQuestion(pattern, text);
+  }
+  if (pattern[1] === '*') {
+    return matchStar(pattern, text);
   }
 
   return (
