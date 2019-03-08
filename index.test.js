@@ -88,3 +88,19 @@ describe('*', () => {
     });
   });
 });
+
+describe('recruit samples', () => {
+  const testCases = [
+    ['def', 'abcdefghij', true],
+    ['a*bc', 'thisisaplaintext', false],
+    ['r.*c.*o', 'recruitcommunications', true],
+    ['q*', 'aaabbbqqqzzz', true],
+    ['xy*z?rco', 'lxyxyzrcolxyyyyrco', true],
+  ];
+
+  testCases.forEach(([pattern, text, expected]) => {
+    test(`${pattern}-${text}: ${expected}`, () => {
+      expect(search(pattern, text)).toBe(expected);
+    });
+  });
+});
