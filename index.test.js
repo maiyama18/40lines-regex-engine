@@ -89,7 +89,7 @@ describe('*', () => {
   });
 });
 
-describe('recruit samples', () => {
+describe('samples', () => {
   const testCases = [
     ['def', 'abcdefghij', true],
     ['a*bc', 'thisisaplaintext', false],
