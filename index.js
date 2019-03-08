@@ -1,8 +1,11 @@
-const matchLen = (pattern, text) => {
-  console.log(pattern, text);
-  return -1;
+const matchOne = (pattern, text) => {
+  if (pattern === '') return true;
+  if (text === '') return false;
+  if (pattern === '.') return true;
+
+  return pattern === text;
 };
 
 module.exports = {
-  matchLen,
+  matchOne,
 };

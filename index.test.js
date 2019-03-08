@@ -1,5 +1,11 @@
-const { matchLen } = require('./index');
+const { matchOne } = require('./index');
 
-test('', () => {
-  expect(matchLen('hello', 'world')).toBe(-1);
+describe('matchOne', () => {
+  const testCases = [['a', 'a', true], ['a', 'b', false]];
+
+  testCases.forEach(([pattern, text, expected]) => {
+    test(`${pattern}-${text}: ${expected}`, () => {
+      expect(matchOne(pattern, text)).toBe(expected);
+    });
+  });
 });
