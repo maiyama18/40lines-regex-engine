@@ -4,8 +4,12 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ["eslint:recommended", "plugin:prettier/recommended"],
-  plugins: ["prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
+  ],
+  plugins: ["prettier", "jest"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
